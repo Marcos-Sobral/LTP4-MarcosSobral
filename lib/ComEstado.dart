@@ -1,5 +1,7 @@
 
-  import 'package:flutter/material.dart';
+  import 'package:app01/tema.dart';
+import 'package:flutter/material.dart';
+import 'tema.dart';
 
 class ComEstado extends StatefulWidget{
   @override
@@ -10,25 +12,44 @@ class ComEstado extends StatefulWidget{
 
 class Estado extends State<ComEstado>{
   int cont = 0;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("O Marcos é Lindo ! "),
+        title: Text("Principal ! "),
+        actions: [
+          MeuSwitcher(),
+          ],
          ),
-         body:  Container(
-          height: 300,
-          width: 300,
-          color: Colors.green,
-          child: Align(
-            alignment: Alignment.center,
-            child: Container(
-            height: 150,
-            width: 150,
-            color: Colors.orange,
-          ),),
-   
-         ),  
-    );
+         
+         
+         
+         body:  Column(
+           children: [Text("Contador: $cont"),
+           MeuSwitcher(),
+           ],
+         ),
+       floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: (){
+         setState(() {
+           cont++;
+         });
+       },
+        ),
+     );  
+  }
+}
+
+class MeuSwitcher extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return  Switch(
+            value: Tema.instance.isThemeDark,
+            onChanged: (value){
+              Tema.instance.changeTheme();
+            }, 
+         );
   }
 }
