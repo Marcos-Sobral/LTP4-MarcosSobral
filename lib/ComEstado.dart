@@ -1,6 +1,7 @@
 
   import 'package:app01/tema.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'tema.dart';
 
 class ComEstado extends StatefulWidget{
@@ -25,10 +26,18 @@ class Estado extends State<ComEstado>{
          
          
          
-         body:  Column(
+         body: 
+         Container( 
+            
+          width:  double.infinity,
+          height: double.infinity,
+          child: Column(
+           mainAxisAlignment: MainAxisAlignment.center,
+           crossAxisAlignment: CrossAxisAlignment.start,
            children: [Text("Contador: $cont"),
            MeuSwitcher(),
            ],
+         ),
          ),
        floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
