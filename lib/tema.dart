@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class Tema extends ChangeNotifier{
-  static Tema instance = Tema(); 
+  static Tema intance = Tema(); 
   bool isThemeDark = false;
   changeTheme(){
     isThemeDark = isThemeDark;

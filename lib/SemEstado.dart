@@ -12,13 +12,13 @@ class AppSemEstado extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: Tema.instance,
+      animation: Tema.intance,
        builder: (context, child)
     {
         return MaterialApp(
         home: ComEstado(),
         theme: ThemeData(
-         brightness: Tema.instance.isThemeDark
+         brightness: Tema.intance.isThemeDark
          ? Brightness.dark
          : Brightness.light,
        ),

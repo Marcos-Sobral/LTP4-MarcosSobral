@@ -1,5 +1,5 @@
 
-  import 'package:app01/tema.dart';
+import 'package:app01/tema.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'tema.dart';
@@ -32,10 +32,31 @@ class Estado extends State<ComEstado>{
           width:  double.infinity,
           height: double.infinity,
           child: Column(
+            
            mainAxisAlignment: MainAxisAlignment.center,
-           crossAxisAlignment: CrossAxisAlignment.start,
-           children: [Text("Contador: $cont"),
+           children: [Text('Contador: $cont'),
+           
            MeuSwitcher(),
+           Row(
+             mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                width: 25,
+                height: 25,
+                color: Colors.red,
+              ),
+              Container(
+                width: 25,
+                height: 25,
+                color: Colors.green,
+              ),
+              Container(
+                width: 25,
+                height: 25,
+                color: Colors.blue,
+              ),
+            ],  
+           ),
            ],
          ),
          ),
@@ -55,9 +76,9 @@ class MeuSwitcher extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Switch(
-            value: Tema.instance.isThemeDark,
+            value: Tema.intance.isThemeDark,
             onChanged: (value){
-              Tema.instance.changeTheme();
+              Tema.intance.changeTheme();
             }, 
          );
   }
