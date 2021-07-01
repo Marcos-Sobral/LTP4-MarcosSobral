@@ -18,15 +18,16 @@ class Estado extends State<ComEstado>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Principal ! "),
+        title: Text("Exclusiva da Moda"),
         actions: [
           MeuSwitcher(),
           ],
          ),
-         
+    
          
          
          body: 
+         
          Container( 
             
           width:  double.infinity,
@@ -34,12 +35,19 @@ class Estado extends State<ComEstado>{
           child: Column(
             
            mainAxisAlignment: MainAxisAlignment.center,
+           //scrollDirection: Axis.vertical,
            children: [Text('Contador: $cont'),
            
            MeuSwitcher(),
            Row(
              mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+                Container(
+                  width: 200,
+                  height: 200,
+                  child: Image.asset("assets/images/11.png"),
+                ), 
+               
               Container(
                 width: 25,
                 height: 25,
@@ -58,8 +66,9 @@ class Estado extends State<ComEstado>{
             ],  
            ),
            ],
+          ),
          ),
-         ),
+
        floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: (){
